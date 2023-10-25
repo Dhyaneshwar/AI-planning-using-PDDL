@@ -24,13 +24,13 @@
         (outside_taxi stuart)
         (customer_location stuart tic)
         
-        (taxi_avaliable taxi_1)
+        (taxi_empty taxi_1)
         (taxi_location taxi_1 tic)
 
-        (taxi_avaliable taxi_2)
+        (taxi_empty taxi_2)
         (taxi_location taxi_2 tic)
         
-        (taxi_avaliable taxi_3)
+        (taxi_empty taxi_3)
         (taxi_location taxi_3 tic)
 
         (connects livingstone_tower royal_college)
@@ -44,6 +44,27 @@
         (connects tic graham_hills)
         (connects barony_hall tic)
         (connects livingstone_tower barony_hall)
+
+        (= (fuel_level taxi_1) 20)
+        (= (fuel_level taxi_2) 20)
+        (= (fuel_level taxi_3) 20)
+
+        (= (fuel_cost royal_college graham_hills) 8)
+        (= (fuel_cost graham_hills royal_college) 8)
+
+        (= (fuel_cost graham_hills tic) 3)
+        (= (fuel_cost tic graham_hills) 3)
+
+        (= (fuel_cost tic barony_hall) 6)
+        (= (fuel_cost barony_hall tic) 6)
+
+        (= (fuel_cost barony_hall livingstone_tower) 5)
+        (= (fuel_cost livingstone_tower barony_hall) 5)
+
+        (= (fuel_cost livingstone_tower royal_college) 5)
+        (= (fuel_cost royal_college livingstone_tower) 5)
+
+        (fuel_station barony_hall)
     )
 
     (:goal
